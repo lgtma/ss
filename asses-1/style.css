@@ -158,14 +158,6 @@ a:hover{ color:#000; }
 .clearfix:after{ clear:both; }
 
 /* Media Query */
-@media (min-width:568px){
-    /* Footer */
-    #footer .box.menu .link{
-        width:33.333%;
-        float:left;
-    }
-}
-
 @media (min-width:768px) {
     /* Boxes */
     .boxes .box{
@@ -181,6 +173,10 @@ a:hover{ color:#000; }
     /* Footer */
     #footer .menu{ width:70%; }
     #footer .social{ width:30%; }
+    #footer .box.menu .link{
+	    width:33.333%;
+	    float:left;
+	}
 }
 @media (max-width: 767px){
 
