@@ -71,7 +71,7 @@ h1 {
 }
 mark {
   color: #000;
-  background: #ffff00;
+  background: #ff0;
 }
 small {
   font-size: 80%;
@@ -171,7 +171,7 @@ input[type=search]::-webkit-search-decoration {
 fieldset {
   padding: .35em .625em .75em;
   margin: 0 2px;
-  border: 1px solid #c0c0c0;
+  border: 1px solid silver;
 }
 table {
   border-spacing: 0;
@@ -329,7 +329,7 @@ ul.inline > li {
   background: #3e6977;
 }
 #header .section.links {
-  background: #333333;
+  background: #333;
   padding: 5px 0;
 }
 #header .section.links .breadcumb,
@@ -338,7 +338,23 @@ ul.inline > li {
 }
 #header .section.links,
 #header .section.links a {
-  color: #e1f5fe;
+  color: #E1F5FE;
+}
+#header .section.links .button-wrap {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  padding: 0;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  color: #5DC5FA;
+  font-size: 1.6875rem;
+  text-align: center;
+}
+#header .section.links .button-wrap > i.fa {
+  line-height: 50px;
 }
 #header .section.menu {
   padding: 0;
@@ -353,6 +369,7 @@ ul.inline > li {
   color: white;
   font-weight: 400;
   font-family: 'Montserrat', sans-serif;
+  font-size: 2.8125rem;
 }
 #header .section .site-logo h1 small {
   font-size: 50%;
@@ -376,7 +393,7 @@ ul.inline > li {
   display: inline-block;
   vertical-align: middle;
   font-family: 'FontAwesome';
-  color: #c5d2d6;
+  color: #C5D2D6;
   width: 25px;
   text-align: center;
   position: absolute;
@@ -392,78 +409,96 @@ ul.inline > li {
 #header .section .site-contact .open .day:before {
   content: "\f017";
 }
+@media (max-width: 992px) {
+  #header .section .site-contact span {
+    display: inline-block;
+    padding-left: 25px;
+  }
+  #header .section .site-contact .address .street,
+  #header .section .site-contact .contact .phone,
+  #header .section .site-contact .open .day {
+    min-width: 115px;
+  }
+  #header .section .site-contact .street:before,
+  #header .section .site-contact .phone:before,
+  #header .section .site-contact .day:before {
+    left: 10px;
+  }
+}
 /* menu */
-.menu ul {
+.menu #main-nav ul,
+.menu #main-nav .sub-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: all .5s;
+}
+.menu #main-nav.shrink > ul {
+  max-height: 1000px;
+  transition: max-height 0.5s;
+}
+.menu #main-nav ul {
   list-style-type: none;
   font-family: Arial, sans-serif;
   text-transform: uppercase;
 }
-.menu ul.inline:before,
-.menu ul.inline:after {
-  content: "";
-  display: table;
-}
-.menu ul.inline:after {
-  clear: both;
-}
-.menu ul.inline > li {
-  line-height: 50px;
-  padding: 0 15px;
-  transition: all .5s;
-}
-.menu ul.inline > li:hover {
-  background: white;
-}
-.menu ul.inline > li:hover > a {
-  color: #4b4b4b;
-}
-.menu ul li {
+.menu #main-nav ul li {
   position: relative;
-}
-.menu ul li .toggle-subnav i.fa {
-  position: absolute;
-  width: 30px;
-  text-align: center;
   line-height: 50px;
+  transition: all .5s;
 }
-.menu ul li a {
-  color: #5dc5fa;
+.menu #main-nav ul li a {
+  color: #5DC5FA;
   padding: 0 15px;
 }
-.menu ul li .sub-menu {
-  max-height: 0;
-  position: absolute;
-  overflow: hidden;
-  left: 0;
+.menu #main-nav ul li .sub-menu {
   z-index: 1;
-  transition: all .5s;
-  width: 160px;
   box-shadow: 0 0 2px #ddd;
   background: white;
 }
-.menu ul li .sub-menu li {
+.menu #main-nav ul li .sub-menu li {
   text-transform: capitalize;
-  padding: 0 15px;
 }
-.menu ul li .sub-menu li a {
+.menu #main-nav ul li .sub-menu li a {
   color: #4b4b4b;
   display: block;
 }
-.menu ul li .sub-menu li a i.fa {
+.menu #main-nav ul li .sub-menu li a i.fa {
   color: #9e9e9e;
   right: 0;
 }
-.menu ul li .sub-menu li:hover {
-  background: #f5f5f5;
-}
-.menu ul li .sub-menu li .sub-menu {
-  top: 0;
-  left: 160px;
-}
-.menu ul li:hover > .sub-menu {
-  max-height: 1000px;
-  overflow: initial;
-  transition: max-height 0.5s;
+@media (max-width: 992px) {
+  .menu #main-nav {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+  .menu #main-nav ul li {
+    border-bottom: 1px solid #3e6977;
+  }
+  .menu #main-nav ul li .toggle-subnav i.fa {
+    text-align: center;
+    line-height: 50px;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 0;
+    font-size: large;
+  }
+  .menu #main-nav ul li:last-child {
+    border-bottom: 0;
+  }
+  .menu #main-nav ul li.shrink > .sub-menu {
+    max-height: 1000px;
+    transition: max-height 0.5s;
+  }
+  .menu #main-nav ul .sub-menu li {
+    border-bottom: 1px solid #e0e0e0;
+  }
+  .menu #main-nav ul .sub-menu li:last-child {
+    border-bottom: 0;
+  }
+  .menu #main-nav ul .sub-menu li .sub-menu {
+    background: #f5f5f5;
+  }
 }
 /* CONTENT
 ============================================ */
@@ -602,7 +637,7 @@ ul.inline > li {
   clear: both;
 }
 .widget.recent-sales .table-data .listing li a {
-  color: #5dc5fa;
+  color: #5DC5FA;
   text-transform: uppercase;
 }
 .widget.property-tabs {
@@ -667,6 +702,34 @@ ul.inline > li {
   position: absolute;
   right: 0;
   top: 0;
+}
+@media (max-width: 992px) {
+  .widget .listing .box.image {
+    width: 20%;
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .widget .listing .box.description {
+    width: 80%;
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+@media (max-width: 568px) {
+  .widget .listing .box.image {
+    width: 40%;
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .widget .listing .box.description {
+    width: 60%;
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 /* thumbview */
 #thumbview ul.rooms {
@@ -753,7 +816,7 @@ ul.inline > li {
   float: left;
   padding-left: 15px;
   padding-right: 15px;
-  padding-bottom: 27.352%;
+  padding-bottom: 75.08%;
 }
 #listview .listing .rooms {
   background: #f5f5f5;
@@ -772,7 +835,7 @@ ul.inline > li {
 }
 #listview .listing .rooms li .type,
 #listview .listing .rooms li .num {
-  color: #333333;
+  color: #333;
 }
 #listview .listing .rooms li > span {
   display: inline-block;
@@ -782,6 +845,7 @@ ul.inline > li {
   float: left;
   padding-left: 15px;
   padding-right: 15px;
+  position: relative;
 }
 #listview .listing .description .title {
   border-bottom: 0;
@@ -793,10 +857,7 @@ ul.inline > li {
   border-bottom: 1px solid #e0e0e0;
 }
 #listview .listing .info {
-  width: 60%;
-  float: left;
-  padding-left: 15px;
-  padding-right: 15px;
+  width: 100%;
   position: absolute;
   bottom: 0;
   right: 0;
@@ -822,10 +883,21 @@ ul.inline > li {
   padding-left: 10px;
 }
 #listview .listing .icon-extra > span.heart:hover {
-  color: #ec407a;
+  color: #EC407A;
 }
 #listview .listing .icon-extra > span.exchange:hover {
   color: #39616e;
+}
+@media (max-width: 992px) {
+  #listview .listing .figure,
+  #listview .listing .description,
+  #listview .listing .info {
+    width: 100%;
+  }
+  #listview .listing .info {
+    position: relative;
+    clear: both;
+  }
 }
 /* listing */
 .listing > li {
@@ -896,6 +968,7 @@ ul.inline > li {
 .listing .description .short-desc {
   padding-top: 15px;
   padding-bottom: 15px;
+  margin-bottom: 30px;
 }
 .listing .description .short-desc p {
   line-height: 1.45;
@@ -921,7 +994,7 @@ ul.inline > li {
 ============================================ */
 .sidebar .email,
 .sidebar .price {
-  color: #ec407a;
+  color: #EC407A;
 }
 .sidebar .type {
   color: #9e9e9e;
@@ -976,17 +1049,17 @@ ul.inline > li {
   margin-bottom: 10px;
 }
 #footer .widget.quick-links ul li > a:hover {
-  color: #5dc5fa;
+  color: #5DC5FA;
 }
 #footer .widget.recent-properties ul li {
   border-color: #658792;
 }
 #footer .widget.recent-properties .description .type {
-  color: #c5d2d6;
+  color: #C5D2D6;
 }
 #footer .widget.our-agents .description .email:before,
 #footer .widget.our-agents .description .phone:before {
-  color: #c5d2d6;
+  color: #C5D2D6;
 }
 #footer .widget.contact .other-media span {
   display: block;
@@ -1003,7 +1076,7 @@ ul.inline > li {
 #footer .widget.contact .other-media span.email:before,
 #footer .widget.contact .other-media span.skype:before {
   display: inline-block;
-  color: #c5d2d6;
+  color: #C5D2D6;
   padding: 0 5px 0 0;
   text-align: left;
 }
@@ -1021,6 +1094,9 @@ ul.inline > li {
 #footer .widget.contact .other-media span.skype:before {
   content: "\f17e";
 }
+#footer .widget.contact .social-media {
+  margin-bottom: 15px;
+}
 #footer .widget.contact .social-media:before,
 #footer .widget.contact .social-media:after {
   content: "";
@@ -1035,8 +1111,8 @@ ul.inline > li {
 #footer .widget.contact .social-media span {
   display: block;
   margin: 0 10px 0 0;
-  background: #5b7f8b;
-  border: 1px solid #c5d2d6;
+  background: #5B7F8B;
+  border: 1px solid #C5D2D6;
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -1063,11 +1139,37 @@ ul.inline > li {
 #footer .box.go-top > a i.fa {
   line-height: 30px;
 }
+@media (max-width: 992px) {
+  #footer .widget.contact .other-media span:first-child {
+    width: 40%;
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  #footer .widget.contact .other-media span:nth-child(2) {
+    width: 60%;
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+@media (max-width: 568px) {
+  #footer .widget.contact .social-media {
+    display: table;
+    margin: 0 auto 15px;
+  }
+  #footer .widget.contact .social-media li {
+    padding: 0 5px;
+  }
+  #footer .widget.contact .social-media li > span {
+    margin: 0;
+  }
+}
 /* MEDIA QUERY 
 ============================================ */
 @media (min-width: 320px) {
   /* CONTENT 
-  	============================================ */
+	============================================ */
   #main .footer .boxes.logo .box {
     width: 50%;
     float: left;
@@ -1090,7 +1192,7 @@ ul.inline > li {
     clear: both;
   }
   .widget.recent-sales .table-data .listing li a {
-    color: #5dc5fa;
+    color: #5DC5FA;
     text-transform: uppercase;
   }
   .widget.recent-sales .table-data .sale-price {
@@ -1129,7 +1231,7 @@ ul.inline > li {
 }
 @media (min-width: 768px) {
   /* LAYOUT
-  	============================================ */
+	============================================ */
   .group {
     width: 100%;
     max-width: 750px;
@@ -1145,46 +1247,22 @@ ul.inline > li {
   .group:after {
     clear: both;
   }
-  /* BOX 
-  	============================================ */
-  #header .box.login {
-    text-align: right;
-  }
-  #header .box.breadcumb,
-  #header .box.login,
-  #header .box.site-logo,
-  #header .box.site-contact {
-    width: 50%;
-    float: left;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-  #header .box.site-contact .address,
-  #header .box.site-contact .contact,
-  #header .box.site-contact .open {
-    width: 33.333333333333336%;
-    float: left;
-    padding-left: 15px;
-    padding-right: 15px;
-    position: relative;
-    padding: 15px;
-  }
   /* CONTENT 
-  	============================================ */
+	============================================ */
   #main .footer .boxes.logo .box {
-    width: 33.333333333333336%;
+    width: 33.33333333%;
     float: left;
     padding-left: 15px;
     padding-right: 15px;
   }
   .widget .listing .box.image {
-    width: 33.333333333333336%;
+    width: 33.33333333%;
     float: left;
     padding-left: 15px;
     padding-right: 15px;
   }
   .widget .listing .box.description {
-    width: 66.66666666666667%;
+    width: 66.66666667%;
     float: left;
     padding-left: 15px;
     padding-right: 15px;
@@ -1201,15 +1279,6 @@ ul.inline > li {
     display: none;
   }
   .widget.recent-sales .table-data .listing li > div {
-    border-bottom: 0;
-    margin-bottom: 0;
-  }
-  .widget.recent-sales .table-data .address,
-  .widget.recent-sales .table-data .sale-price,
-  .widget.recent-sales .table-data .sold-date,
-  .widget.recent-sales .table-data .bed,
-  .widget.recent-sales .table-data .bath,
-  .widget.recent-sales .table-data .car {
     border-bottom: 0;
     margin-bottom: 0;
   }
@@ -1235,13 +1304,13 @@ ul.inline > li {
     padding-right: 15px;
   }
   .widget.property-tabs #thumbview .listing > li {
-    width: 33.333333333333336%;
+    width: 33.33333333%;
     float: left;
     padding-left: 15px;
     padding-right: 15px;
   }
   /* SIDEBAR
-  	============================================ */
+	============================================ */
   .sidebar .widget .listing .box.image {
     width: 15%;
     float: left;
@@ -1275,8 +1344,40 @@ ul.inline > li {
     margin-left: -15px;
     margin-right: -15px;
   }
+  /* HEADER 
+	============================================ */
+  #header .section.links .button-wrap {
+    display: none;
+  }
+  #header .section.info .site-contact .street:before,
+  #header .section.info .site-contact .phone:before,
+  #header .section.info .site-contact .day:before {
+    left: -15px;
+  }
   /* BOX 
-  	============================================ */
+	============================================ */
+  #header .box.login {
+    text-align: right;
+  }
+  #header .box.breadcumb,
+  #header .box.login,
+  #header .box.site-logo,
+  #header .box.site-contact {
+    width: 50%;
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  #header .box.site-contact .address,
+  #header .box.site-contact .contact,
+  #header .box.site-contact .open {
+    width: 33.33333333%;
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    padding: 15px;
+  }
   #footer .box.widget {
     width: 25%;
     float: left;
@@ -1284,7 +1385,7 @@ ul.inline > li {
     padding-right: 15px;
   }
   /* CONTENT 
-  	============================================ */
+	============================================ */
   #main .entry {
     width: 75%;
     float: left;
@@ -1298,13 +1399,23 @@ ul.inline > li {
     padding-right: 15px;
   }
   #main .footer .boxes.logo .box {
-    width: 16.666666666666668%;
+    width: 16.66666667%;
     float: left;
     padding-left: 15px;
     padding-right: 15px;
   }
+  #listview .listing .figure {
+    padding-bottom: 27.352%;
+  }
+  #listview .listing .info {
+    width: 60%;
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding: 0;
+  }
   /* SIDEBAR
-  	============================================ */
+	============================================ */
   .sidebar .widget .listing .box.image {
     width: 35%;
     float: left;
@@ -1318,7 +1429,7 @@ ul.inline > li {
     padding-right: 15px;
   }
   /* FOOTER 
-  	============================================ */
+	============================================ */
   #footer .widget.contact .other-media span {
     display: block;
   }
@@ -1350,5 +1461,62 @@ ul.inline > li {
   }
   .group:after {
     clear: both;
+  }
+  /* menu */
+  .menu #main-nav ul {
+    list-style-type: none;
+    font-family: Arial, sans-serif;
+    text-transform: uppercase;
+    overflow: inherit;
+  }
+  .menu #main-nav ul > li:hover {
+    background: white;
+  }
+  .menu #main-nav ul > li:hover > a {
+    color: #4b4b4b;
+  }
+  .menu #main-nav ul li {
+    padding: 0 15px;
+  }
+  .menu #main-nav ul li .toggle-subnav i.fa {
+    position: absolute;
+    width: 30px;
+    text-align: center;
+    line-height: 50px;
+  }
+  .menu #main-nav ul li .sub-menu {
+    max-height: 0;
+    position: absolute;
+    overflow: hidden;
+    left: 0;
+    z-index: 1;
+    transition: all .5s;
+    width: 160px;
+    box-shadow: 0 0 2px #ddd;
+    background: white;
+  }
+  .menu #main-nav ul li .sub-menu li {
+    text-transform: capitalize;
+    padding: 0 15px;
+  }
+  .menu #main-nav ul li .sub-menu li a {
+    color: #4b4b4b;
+    display: block;
+  }
+  .menu #main-nav ul li .sub-menu li a i.fa {
+    color: #9e9e9e;
+    right: 0;
+  }
+  .menu #main-nav ul li .sub-menu li:hover {
+    background: #f5f5f5;
+  }
+  .menu #main-nav ul li .sub-menu li .sub-menu {
+    top: 0;
+    left: 160px;
+  }
+  .menu #main-nav ul li:hover > .sub-menu {
+    max-height: 1000px;
+    overflow: initial;
+    transition: max-height 0.5s;
   }
 }
