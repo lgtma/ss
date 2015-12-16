@@ -10,17 +10,10 @@ var apps = (function($){
 		// create functions:
 		function responsEl(){
 			$(window).on('load resize', function(){
+				// padding main content from footer
 				var footH = $('#footer').height();
 				$('#main').css('padding-bottom',footH + 'px');
-				// listing property
-				/*if($('.property .listing').length){
-					var boxWidth  = $('.box .figure').width();
-					var boxHeight = Math.floor(boxWidth/4)*3;
-					$('.box').each(function(){
-						$('.figure',this).css('height',boxHeight);
-					});
-				}*/
-			})
+			});
 		}
 		
 		// toggle menu
@@ -38,7 +31,7 @@ var apps = (function($){
 					$('> a',this).addClass('toggle-subnav');
 					$('<i class="fa fa-caret-down"></i>').appendTo($('> a',this));
 					//subnav lv.2
-					$('.sub-menu > li').each(function(){
+					$('.sub-menu li').each(function(){
 						if($('.sub-menu',this).length){
 							$('> a',this).addClass('toggle-subnav');
 							$('<i class="fa fa-caret-right"></i>').appendTo($('> a',this));
@@ -55,7 +48,7 @@ var apps = (function($){
 
 			//close nav
 			$('body').on('click',function(e){
-				var a=$y(e.target),b=a.parents();
+				var a=$(e.target),b=a.parents();
 				if(!a.is('a')&&!b.is('a')) {
 				if($('nav[role="navigation"]').hasClass('shrink')) $('nav[role="navigation"]').removeClass('shrink');
 					else return;
