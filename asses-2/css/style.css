@@ -10,26 +10,6 @@
   transition: all .5s;
 }
 /*! Style helper | @lgtma */
-.clear:before,
-.clear:after {
-  content: "";
-  display: table;
-}
-.clear:after {
-  clear: both;
-}
-.translate-center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-}
-.text-ellipsis {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
 h1,
 h2,
 h3,
@@ -48,9 +28,9 @@ a:visited {
   text-decoration: none;
   outline: none;
 }
-/* styling start here */
-/* GLOBAL
-============================================ */
+/*
+ * styling start here
+ ----------------------------------------------- */
 html,
 body {
   height: 100%;
@@ -92,6 +72,9 @@ h5 {
 h6 {
   font-size: 1.25rem;
 }
+/*
+ * MISC.
+ ----------------------------------------------- */
 .base-fontsize {
   font-size: 0.8125rem;
 }
@@ -118,8 +101,9 @@ ul.inline:after {
 ul.inline > li {
   float: left;
 }
-/* LAYOUT
-============================================ */
+/*
+ * LAYOUT
+ ----------------------------------------------- */
 .wrapper {
   min-height: 100%;
   position: relative;
@@ -132,42 +116,34 @@ ul.inline > li {
   padding-right: 15px;
 }
 .group:before,
-.group:after {
-  content: "";
-  display: table;
-}
-.group:after {
-  clear: both;
-}
 .boxes:before,
+.group:after,
 .boxes:after {
   content: "";
   display: table;
 }
+.group:after,
 .boxes:after {
   clear: both;
-}
-.section {
-  padding: 15px 0;
 }
 /* HEADER
-============================================ */
+ ----------------------------------------------- */
 #header {
   background: #3e6977;
 }
-#header .section.links {
+#header .links {
   background: #333333;
   padding: 5px 0;
 }
-#header .section.links .breadcumb,
-#header .section.links .login {
+#header .links .breadcumb,
+#header .links .login {
   padding: 5px 0;
 }
-#header .section.links,
-#header .section.links a {
+#header .links,
+#header .links a {
   color: #e1f5fe;
 }
-#header .section.links .button-wrap {
+#header .links .button-wrap {
   display: block;
   position: absolute;
   top: 0;
@@ -180,43 +156,43 @@ ul.inline > li {
   font-size: 1.6875rem;
   text-align: center;
 }
-#header .section.links .button-wrap > i.fa {
+#header .links .button-wrap > i.fa {
   line-height: 50px;
 }
-#header .section.menu {
+#header .menu {
   padding: 0;
   background: #39616e;
 }
-#header .section .site-logo {
+#header .site-logo {
   padding-top: 15px;
   padding-bottom: 15px;
 }
-#header .section .site-logo h1 {
+#header .site-logo h1 {
   text-transform: capitalize;
   color: white;
   font-weight: 400;
   font-family: 'Montserrat', sans-serif;
   font-size: 2.8125rem;
 }
-#header .section .site-logo h1 small {
+#header .site-logo h1 small {
   font-size: 50%;
   text-transform: lowercase;
 }
-#header .section .site-contact {
+#header .site-contact {
   color: white;
 }
-#header .section .site-contact span {
+#header .site-contact span {
   display: block;
   line-height: 25px;
 }
-#header .section .site-contact .address .state,
-#header .section .site-contact .contact .email,
-#header .section .site-contact .open .time {
+#header .site-contact .address .state,
+#header .site-contact .contact .email,
+#header .site-contact .open .time {
   color: #b3e5fc;
 }
-#header .section .site-contact .street:before,
-#header .section .site-contact .phone:before,
-#header .section .site-contact .day:before {
+#header .site-contact .street:before,
+#header .site-contact .phone:before,
+#header .site-contact .day:before {
   display: inline-block;
   vertical-align: middle;
   font-family: 'FontAwesome';
@@ -227,32 +203,34 @@ ul.inline > li {
   left: -15px;
   font-size: 1.25rem;
 }
-#header .section .site-contact .address .street:before {
+#header .site-contact .address .street:before {
   content: "\f041";
 }
-#header .section .site-contact .contact .phone:before {
+#header .site-contact .contact .phone:before {
   content: "\f095";
 }
-#header .section .site-contact .open .day:before {
+#header .site-contact .open .day:before {
   content: "\f017";
 }
 @media (max-width: 992px) {
-  #header .section .site-contact span {
+  #header .site-contact span {
     display: inline-block;
     padding-left: 25px;
   }
-  #header .section .site-contact .address .street,
-  #header .section .site-contact .contact .phone,
-  #header .section .site-contact .open .day {
+  #header .site-contact .address .street,
+  #header .site-contact .contact .phone,
+  #header .site-contact .open .day {
     min-width: 115px;
   }
-  #header .section .site-contact .street:before,
-  #header .section .site-contact .phone:before,
-  #header .section .site-contact .day:before {
+  #header .site-contact .street:before,
+  #header .site-contact .phone:before,
+  #header .site-contact .day:before {
     left: 10px;
   }
 }
-/* menu */
+/*
+ * MENU
+ ----------------------------------------------- */
 .menu #main-nav ul,
 .menu #main-nav .sub-menu {
   max-height: 0;
@@ -327,8 +305,9 @@ ul.inline > li {
     background: #f5f5f5;
   }
 }
-/* CONTENT
-============================================ */
+/*
+ * CONTENT
+ ----------------------------------------------- */
 /* main */
 #main .entry,
 #main .sidebar {
@@ -713,7 +692,9 @@ ul.inline > li {
     clear: both;
   }
 }
-/* listing */
+/*
+ * LISTING
+ ----------------------------------------------- */
 .listing > li {
   margin-bottom: 15px;
 }
@@ -804,8 +785,9 @@ ul.inline > li {
 .rooms .num {
   color: #4b4b4b;
 }
-/* SIDEBAR
-============================================ */
+/*
+ * SIDEBAR
+ ----------------------------------------------- */
 .sidebar .email,
 .sidebar .price {
   color: #ec407a;
@@ -873,8 +855,9 @@ ul.inline > li {
     padding-right: 0;
   }
 }
-/* FOOTER 
-============================================ */
+/*
+ * FOOTER
+ ----------------------------------------------- */
 #footer {
   position: absolute;
   width: 100%;
@@ -1004,11 +987,11 @@ ul.inline > li {
     margin: 0;
   }
 }
-/* MEDIA QUERY 
-============================================ */
+/*
+ * MEDIA QUERY
+ ----------------------------------------------- */
 @media (min-width: 320px) {
-  /* CONTENT 
-  	============================================ */
+  /* content */
   #main .footer .boxes.logo .box {
     width: 50%;
     float: left;
@@ -1069,8 +1052,6 @@ ul.inline > li {
   }
 }
 @media (min-width: 768px) {
-  /* LAYOUT
-  	============================================ */
   .group {
     width: 100%;
     max-width: 750px;
@@ -1078,16 +1059,7 @@ ul.inline > li {
     padding-left: 15px;
     padding-right: 15px;
   }
-  .group:before,
-  .group:after {
-    content: "";
-    display: table;
-  }
-  .group:after {
-    clear: both;
-  }
-  /* CONTENT 
-  	============================================ */
+  /* content */
   #main .footer .boxes.logo .box {
     width: 33.333333333333336%;
     float: left;
@@ -1148,8 +1120,7 @@ ul.inline > li {
     padding-left: 15px;
     padding-right: 15px;
   }
-  /* SIDEBAR
-  	============================================ */
+  /* sidebar */
   .sidebar .widget .listing .box.image {
     width: 15%;
     float: left;
@@ -1171,30 +1142,20 @@ ul.inline > li {
     padding-left: 15px;
     padding-right: 15px;
   }
-  .group:before,
-  .group:after {
-    content: "";
-    display: table;
-  }
-  .group:after {
-    clear: both;
-  }
   .boxes {
     margin-left: -15px;
     margin-right: -15px;
   }
-  /* HEADER 
-  	============================================ */
-  #header .section.links .button-wrap {
+  /* header */
+  #header .links .button-wrap {
     display: none;
   }
-  #header .section.info .site-contact .street:before,
-  #header .section.info .site-contact .phone:before,
-  #header .section.info .site-contact .day:before {
+  #header .info .site-contact .street:before,
+  #header .info .site-contact .phone:before,
+  #header .info .site-contact .day:before {
     left: -15px;
   }
-  /* BOX 
-  	============================================ */
+  /* box */
   #header .box.login {
     text-align: right;
   }
@@ -1223,8 +1184,7 @@ ul.inline > li {
     padding-left: 15px;
     padding-right: 15px;
   }
-  /* CONTENT 
-  	============================================ */
+  /* content */
   #main .entry {
     width: 75%;
     float: left;
@@ -1253,8 +1213,7 @@ ul.inline > li {
     padding-right: 15px;
     padding: 0;
   }
-  /* SIDEBAR
-  	============================================ */
+  /* sidebar */
   .sidebar .widget .listing .box.image {
     width: 35%;
     float: left;
@@ -1267,8 +1226,7 @@ ul.inline > li {
     padding-left: 15px;
     padding-right: 15px;
   }
-  /* FOOTER 
-  	============================================ */
+  /* footer */
   #footer .widget.contact .other-media span {
     display: block;
   }
@@ -1292,14 +1250,6 @@ ul.inline > li {
     margin: 0 auto;
     padding-left: 15px;
     padding-right: 15px;
-  }
-  .group:before,
-  .group:after {
-    content: "";
-    display: table;
-  }
-  .group:after {
-    clear: both;
   }
   /* menu */
   .menu #main-nav ul {
