@@ -75,7 +75,6 @@ var apps = {
 			//Header
 			if($('#header').length){
 				var ul_Menu = $('#main-nav > ul');
-
 				if(ww<=1024){
 					$(ul_Menu).removeClass('inline');
 				} else{
