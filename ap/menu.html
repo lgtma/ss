@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>
+        AP Menu Navigation Style
+    </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Bootstrap CSS -->
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="style.css" rel="stylesheet"/>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js">
+        </script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js">
+        </script>
+    <![endif]-->
+</head>
+<body>
+	<header id="header" class="site-header">
+		<div class="container">
+			<h1>
+		        Hello World
+		    </h1>
+		    <nav id="main-nav" role="navigation">
+		        <ul class="menu">
+		            <li>
+		                <a href="#home">
+		                    Home
+		                </a>
+		            </li>
+		            <li class="menu-item-has-children">
+		                <a href="#about">
+		                    About
+		                </a>
+		                <ul class="sub-menu">
+		                    <li>
+		                        <a href="#sub-about-1">
+		                            Sub About 1
+		                        </a>
+		                    </li>
+		                    <li>
+		                        <a href="#sub-about-2">
+		                            Sub About 2
+		                        </a>
+		                    </li>
+		                    <li>
+		                        <a href="#sub-about-3">
+		                            Sub About 3
+		                        </a>
+		                    </li>
+		                </ul>
+		            </li>
+		            <li>
+		                <a href="#blog">
+		                    Blog
+		                </a>
+		            </li>
+		            <li class="menu-item-has-children">
+		                <a href="#contact">
+		                    Contact
+		                </a>
+		                <ul class="sub-menu">
+		                    <li>
+		                        <a href="#sub-contact-1">
+		                            Sub Contact 1
+		                        </a>
+		                    </li>
+		                    <li>
+		                        <a href="#sub-contact-2">
+		                            Sub Contact 2
+		                        </a>
+		                    </li>
+		                    <li>
+		                        <a href="#sub-contact-3">
+		                            Sub Contact 3
+		                        </a>
+		                        <ul class="sub-menu">
+		                            <li>
+		                                <a href="#sub-contact-1">
+		                                    Sub lvl.2 Contact 1
+		                                </a>
+		                            </li>
+		                            <li>
+		                                <a href="#sub-contact-1">
+		                                    Sub lvl.2 Contact 2
+		                                </a>
+		                            </li>
+		                            <li>
+		                                <a href="#sub-contact-1">
+		                                    Sub lvl.2 Contact 3
+		                                </a>
+		                            </li>
+		                        </ul>
+		                    </li>
+		                    <li>
+		                        <a href="#sub-contact-4">
+		                            Sub Contact 4
+		                        </a>
+		                    </li>
+		                </ul>
+		            </li>
+		        </ul>
+		    </nav>
+		</div>
+	</header>
+	<!-- /header -->
+    <div class="container">
+        <p>
+            Use responsive view to see the menu
+        </p>
+    </div>
+    <!-- jQuery -->
+    <script src="http://code.jquery.com/jquery.js">
+    </script>
+    <!-- Bootstrap JavaScript -->
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js">
+    </script>
+    <!-- custom -->
+    <script src="apjs.js">
+    </script>
+    <script>
+        (function($){
+        $('#main-nav').apMenu();
+        })(jQuery);
+    </script>
+</body>
+</html>
