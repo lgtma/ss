@@ -1,7 +1,7 @@
 USAGE:
 -----------------------------------
-
 apjs.js - menu functions
+
 style.css - menu style
 
 	(function($){
