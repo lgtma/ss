@@ -1,3 +1,6 @@
+html,body{
+	height:100%;
+}
 a,a:hover,a:focus{
 	text-decoration:none;
 	outline:none;
@@ -8,127 +11,92 @@ ul {
     padding: 0;
     margin: 0;
 }
-#header .container{ position:relative; }
-#header{
-	padding-top:15px;
-	padding-bottom:15px;
+#content{
+	min-height: 100%;
 }
-/* Main Menu */
-.ap-menu, 
-.toggle-main-menu i.fa{
-	font-size: large;
+
+/* Navigation */
+nav{
+	display: none;
 }
 .toggle-main-menu{
-	position: absolute;
-	top: 15px;
-	right: 15px;
 	display: block;
-	width: 50px;
-	height: 50px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	cursor: pointer;
+}
+.toggle-main-menu{
+	background: #2a6496;
 	text-align: center;
-	line-height: 50px;
-	cursor:pointer;
-	background:#6CA5C8;
-	color:#fff;
-	box-shadow:0px 0px 1px #33333F;
+	width: 40px;
+	height: 40px;
 }
-.toggle-main-menu i.fa{ line-height:50px; }
-
-ul.menu li{ position:relative; }
-ul.menu li a{ display:block; }
-ul.menu li a:hover{ color:#0990AD; }
-ul.menu li > ul.sub-menu{
-	max-height:0;
-	overflow:hidden;
-	transition:max-height .3s;
-	-webkit-transition: max-height .3s;
+.toggle-main-menu i.fa{
+	color: #fff;
+	font-size: 25px;
+	line-height: 40px;
+	display:block;
 }
 
-/* Media Query */
-@media (max-width: 1200px) {
-	/* Main Menu */	
-	ul.menu li{
-		background:#87CEFA;
-	}
-	ul.menu > li > a{
-		border-bottom:1px solid #CDEAEA;
-		text-transform: uppercase;
-	} 
-	ul.menu li a{
-		color:#fff;
-		padding:0 15px;
-		line-height:50px;
-	}
-	ul.menu i.fa{
-		position:absolute;
-		right:0;
-		top:0;
-		text-align:center;
-		line-height:50px;
-		width:50px;
-		background:rgba(0,0,0,0.2);
-	}
-	nav[role="navigation"]{
-		max-height:0;
-		overflow:hidden;
-		transition:max-height .3s;
-		-webkit-transition: max-height .3s;
-	}
-	nav[role="navigation"].shrink,
-	ul.menu li.shrink > ul.sub-menu{
-		max-height:1000px;
-		transition-duration:.5s;
-		-webkit-transition-duration:.5s;
-	}
-	ul.sub-menu li{
-		background:rgba(0,0,0,.2);
-	}
-	ul.sub-menu li a{
-		padding:0 25px;
-		line-height:50px;
-		border-bottom: 1px solid #CDEAEA;
-	}
-	ul.sub-menu li .sub-menu li a{
-		padding:0 35px;
-	}
+.ap-menu li a{
+	display: block;
+	line-height: 30px;
 }
-@media (min-width: 1200px) {
-	/* Main Menu */
-	.toggle-main-menu{ display:none; }
-    ul.menu:before, 
-    ul.menu:after{
-    	display:table;
-    	content:" ";
-    }
-    ul.menu:after{ clear:both; }
-    ul.menu > li{ 
-    	float:left;
-   	}
-   	ul.menu i.fa{ display:none; }
-    ul.menu li a{
-    	padding:0 15px;
-    	line-height:30px;
-    }
-    ul.menu li ul.sub-menu{
-    	min-width:200px;
-    }
-    ul.menu li:hover > ul.sub-menu{
-    	max-height:1000px;
-    	transition-duration:.5s;
-    	-webkit-transition-duration:.5s;
-    }
-    ul.sub-menu{ position:absolute; }
-    ul.sub-menu li ul.sub-menu{ position:relative; }
+.ap-menu li.shrink > .ap-sub-menu{
+	max-height: 1000px;
+	-webkit-transition: all .5s ease-in-out;
+	   -moz-transition: all .5s ease-in-out;
+	    -ms-transition: all .5s ease-in-out;
+	     -o-transition: all .5s ease-in-out;
+	        transition: all .5s ease-in-out;
+}
+.ap-sub-menu{
+	max-height: 0;
+	overflow: hidden;
+	-webkit-transition: all .5s ease-in-out;
+   -moz-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+     -o-transition: all .5s ease-in-out;
+        transition: all .5s ease-in-out;
+}
 
-  	nav[role="navigation"].with-pointer ul.menu > li.menu-item-has-children:hover > a:after {
-		content: '';
-		width: 0;
-		height: 0;
-		border-left: 6px solid transparent;
-		border-right: 6px solid transparent;
-		border-bottom: 8px solid rgba(0, 51, 75, 0.35);
+/* default menu theme */
+#main-nav{
+	background: #2a6496;
+}
+.default-ap-theme .ap-menu a{
+	color: #fff;
+}
+
+/* MEDIA QUERY */
+@media (min-width: 992px){
+	/* NAVIGATION */
+	nav{
+		display: block;
+	}
+	.toggle-main-menu,
+	.toggle-subnav i.fa{
+		display: none;
+	}
+	/* mainmenu */
+	.ap-menu:before,
+	.ap-menu:after{
+		content: "";
+		display: table;
+	}
+	.ap-menu:after{
+		clear: both;
+	}
+	.ap-menu > li{
+		float: left;
+		position: relative;
+	}
+	.ap-sub-menu{
 		position: absolute;
-		bottom: -10px;
-		left: 30px;
+		min-width: 150px;
+	}
+	.ap-sub-menu li > ul{
+		left: 150px;
 	}
 }
