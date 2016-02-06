@@ -1,5 +1,6 @@
 INSTALATION
 ----------------------------------------------------------------------
+```html
 <!-- build menu -->
 <nav id="navid" role="navigation">
 	<ul>
@@ -8,7 +9,11 @@ INSTALATION
 		<li><a href="#blog">Blog</a></li>
 	</ul>	
 </nav>
-<!-- call function -->
+```
+
+```
+/* call function */
 (function($){
 	$('#navid').apMenu();
 })(jQuery);
+```
