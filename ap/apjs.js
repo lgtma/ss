@@ -11,7 +11,7 @@
 			ulsubClass: 'ap-sub-menu',
 			toggleName: 'toggle-main-menu',
 			toggleNav: '', //place where to put toggle
-			theme: 'default-ap-theme'
+			theme: 'ap-menu-theme'
 		}, options);
 
 		var opt = $.extend(defaults,options);
@@ -29,11 +29,15 @@
 			if($(defaults.theme)){ $nav.addClass(defaults.theme); }
 
 			// if appendToggle not empty append toggle menu to specified place;
-			$(defaults.toggleNav!='')? $(defaults.toggleNav).append(toggle) : $nav.append(appendToggle);
-
+			if(defaults.toggleNav){
+				$(defaults.toggleNav).append(toggle)
+			} else{
+				$nav.append(toggle);
+			}
+			
 			// main nav toggle function
 			toggle.click(function(){
-				$nav.toggleClass('shrink').slideToggle();
+				$nav.toggleClass('shrink');
 			});
 			
 			// subnav toggle function

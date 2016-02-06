@@ -16,9 +16,6 @@ ul {
 }
 
 /* Navigation */
-nav{
-	display: none;
-}
 .toggle-main-menu{
 	display: block;
 	position: absolute;
@@ -39,34 +36,36 @@ nav{
 	display:block;
 }
 
-.ap-menu li a{
-	display: block;
-	line-height: 30px;
+/* default menu theme */
+.ap-menu-theme{
+	background: #2a6496;
 }
+.ap-menu-theme .ap-menu a{
+	color: #fff;
+}
+
+.ap-menu-theme.shrink .ap-menu,
 .ap-menu li.shrink > .ap-sub-menu{
 	max-height: 1000px;
 	-webkit-transition: all .5s ease-in-out;
-	   -moz-transition: all .5s ease-in-out;
-	    -ms-transition: all .5s ease-in-out;
-	     -o-transition: all .5s ease-in-out;
-	        transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	-ms-transition: all .5s ease-in-out;
+	 -o-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
 }
+.ap-menu,
 .ap-sub-menu{
 	max-height: 0;
 	overflow: hidden;
 	-webkit-transition: all .5s ease-in-out;
-   -moz-transition: all .5s ease-in-out;
-    -ms-transition: all .5s ease-in-out;
-     -o-transition: all .5s ease-in-out;
-        transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	-ms-transition: all .5s ease-in-out;
+	-o-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
 }
-
-/* default menu theme */
-#main-nav{
-	background: #2a6496;
-}
-.default-ap-theme .ap-menu a{
-	color: #fff;
+.ap-menu li a{
+	display: block;
+	line-height: 30px;
 }
 
 /* MEDIA QUERY */
