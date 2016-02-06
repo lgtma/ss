@@ -11,7 +11,7 @@ INSTALATION
 </nav>
 ```
 
-```
+```javascript
 /* call function */
 (function($){
 	$('#navid').apMenu();
