@@ -65,8 +65,8 @@ h5 {
 h6 {
   font-size: 1.25rem;
 }
-/*
- * MISC.
+/*-------------------------------------------------
+  MISC.
  ----------------------------------------------- */
 .base-fontsize {
   font-size: 0.8125rem;
@@ -98,8 +98,8 @@ ul.inline:after {
 ul.inline > li {
   float: left;
 }
-/*
- * LAYOUT
+/*-------------------------------------------------
+  LAYOUT
  ----------------------------------------------- */
 .wrapper {
   min-height: 100%;
@@ -123,7 +123,8 @@ ul.inline > li {
 .boxes:after {
   clear: both;
 }
-/* HEADER
+/*-------------------------------------------------
+  HEADER
  ----------------------------------------------- */
 #header {
   background: #3e6977;
@@ -237,8 +238,8 @@ ul.inline > li {
     font-size: 3.125rem;
   }
 }
-/*
- * MENU
+/*-------------------------------------------------
+  MENU
  ----------------------------------------------- */
 .menu #main-nav {
   margin-left: -15px;
@@ -314,8 +315,8 @@ ul.inline > li {
     background: #f5f5f5;
   }
 }
-/*
- * CONTENT
+/*-------------------------------------------------
+  CONTENT
  ----------------------------------------------- */
 /* main */
 #main .entry,
@@ -333,6 +334,9 @@ ul.inline > li {
   left: 50%;
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
   max-height: 70px;
 }
 #main .footer .boxes.logo .box {
@@ -340,8 +344,8 @@ ul.inline > li {
   margin: 15px 0;
   padding-bottom: 15.385%;
 }
-/*
- * WIDGET
+/*-------------------------------------------------
+  WIDGET
  ----------------------------------------------- */
 .widget .title {
   display: block;
@@ -381,6 +385,9 @@ ul.inline > li {
   padding-bottom: 100%;
   border-radius: 5%;
   -webkit-border-radius: 5%;
+  -moz-border-radius: 5%;
+  -mz-border-radius: 5%;
+  -o-border-radius: 5%;
 }
 .widget.recent-properties .image span img {
   height: 100%;
@@ -390,6 +397,9 @@ ul.inline > li {
   left: 50%;
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
 }
 .widget.recent-properties ul li {
   border-bottom: 1px solid;
@@ -528,18 +538,18 @@ ul.inline > li {
   right: 0;
   top: 0;
 }
-@media (max-width: 568px) {
+@media (max-width: 767px) {
   .widget .listing .boxes .box.image {
     width: 25%;
     float: left;
-    padding-left: 15px;
     padding-right: 15px;
+    padding-left: 15px;
   }
   .widget .listing .boxes .box.description {
     width: 75%;
     float: left;
-    padding-left: 15px;
     padding-right: 15px;
+    padding-left: 15px;
   }
 }
 /* thumbview */
@@ -562,8 +572,8 @@ ul.inline > li {
 #thumbview ul.rooms li > span {
   width: 50%;
   float: left;
-  padding-left: 15px;
   padding-right: 15px;
+  padding-left: 15px;
 }
 #thumbview ul.rooms li > span.num {
   text-align: right;
@@ -603,6 +613,9 @@ ul.inline > li {
 #thumbview .agent.image.rounded > span {
   border: 2px solid white;
 }
+#thumbview .agent.image.rounded img {
+  width: 125%;
+}
 /* listview */
 #listview .listing {
   margin-top: 15px;
@@ -625,8 +638,8 @@ ul.inline > li {
 #listview .listing .figure {
   width: 40%;
   float: left;
-  padding-left: 15px;
   padding-right: 15px;
+  padding-left: 15px;
   padding-bottom: 75.08%;
 }
 #listview .listing .rooms {
@@ -654,8 +667,8 @@ ul.inline > li {
 #listview .listing .description {
   width: 60%;
   float: left;
-  padding-left: 15px;
   padding-right: 15px;
+  padding-left: 15px;
   position: relative;
 }
 #listview .listing .description .title {
@@ -719,8 +732,8 @@ ul.inline > li {
     border-bottom: 1px solid #e0e0e0;
   }
 }
-/*
- * LISTING
+/*-------------------------------------------------
+  LISTING
  ----------------------------------------------- */
 .listing > li {
   margin-bottom: 15px;
@@ -759,6 +772,9 @@ ul.inline > li {
   left: 50%;
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
 }
 .listing .image.rounded > span {
   display: block;
@@ -767,6 +783,9 @@ ul.inline > li {
   padding-bottom: 100%;
   border-radius: 50%;
   -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -mz-border-radius: 50%;
+  -o-border-radius: 50%;
 }
 .listing .description .title,
 .listing .description h2 {
@@ -812,8 +831,8 @@ ul.inline > li {
 .rooms .num {
   color: #4b4b4b;
 }
-/*
- * SIDEBAR
+/*-------------------------------------------------
+  SIDEBAR
  ----------------------------------------------- */
 .sidebar .email,
 .sidebar .price {
@@ -832,18 +851,19 @@ ul.inline > li {
 .sidebar .widget .listing .title {
   padding: 0 0 5px;
   margin: 0 0 5px;
+  border-bottom: 0;
 }
 .sidebar .widget .listing .box.image {
   width: 35%;
   float: left;
-  padding-left: 15px;
   padding-right: 15px;
+  padding-left: 15px;
 }
 .sidebar .widget .listing .box.description {
   width: 65%;
   float: left;
-  padding-left: 15px;
   padding-right: 15px;
+  padding-left: 15px;
 }
 .sidebar .widget.our-agents {
   padding: 0 15px;
@@ -873,8 +893,8 @@ ul.inline > li {
   .sidebar .widget.featured-properties .listing > li {
     width: 50%;
     float: left;
-    padding-left: 15px;
     padding-right: 15px;
+    padding-left: 15px;
   }
 }
 @media (max-width: 568px) {
@@ -886,8 +906,8 @@ ul.inline > li {
     padding-right: 0;
   }
 }
-/*
- * FOOTER
+/*-------------------------------------------------
+  FOOTER
  ----------------------------------------------- */
 #footer {
   position: absolute;
@@ -996,14 +1016,14 @@ ul.inline > li {
   #footer .widget.contact .other-media span:first-child {
     width: 40%;
     float: left;
-    padding-left: 15px;
     padding-right: 15px;
+    padding-left: 15px;
   }
   #footer .widget.contact .other-media span:nth-child(2) {
     width: 60%;
     float: left;
-    padding-left: 15px;
     padding-right: 15px;
+    padding-left: 15px;
   }
 }
 @media (max-width: 568px) {
@@ -1029,16 +1049,16 @@ ul.inline > li {
     background: #39616e;
   }
 }
-/*
- * MEDIA QUERY
+/*-------------------------------------------------
+  MEDIA QUERY
  ----------------------------------------------- */
 @media (min-width: 320px) {
   /* content */
   #main .footer .boxes.logo .box {
     width: 50%;
     float: left;
-    padding-left: 15px;
     padding-right: 15px;
+    padding-left: 15px;
   }
   .widget.recent-sales .table-head {
     display: none;
@@ -1105,20 +1125,20 @@ ul.inline > li {
   #main .footer .boxes.logo .box {
     width: 33.333333333333336%;
     float: left;
-    padding-left: 15px;
     padding-right: 15px;
+    padding-left: 15px;
   }
   .widget .listing .box.image {
     width: 33.333333333333336%;
     float: left;
-    padding-left: 15px;
     padding-right: 15px;
+    padding-left: 15px;
   }
   .widget .listing .box.description {
     width: 66.66666666666667%;
     float: left;
-    padding-left: 15px;
     padding-right: 15px;
+    padding-left: 15px;
   }
   .widget.recent-sales .table-head {
     display: block;
@@ -1140,27 +1160,27 @@ ul.inline > li {
   .widget.recent-sales .car {
     width: 10%;
     float: left;
-    padding-left: 15px;
     padding-right: 15px;
+    padding-left: 15px;
   }
   .widget.recent-sales .sale-price,
   .widget.recent-sales .sold-date {
     width: 15%;
     float: left;
-    padding-left: 15px;
     padding-right: 15px;
+    padding-left: 15px;
   }
   .widget.recent-sales .address {
     width: 40%;
     float: left;
-    padding-left: 15px;
     padding-right: 15px;
+    padding-left: 15px;
   }
   .widget.property-tabs #thumbview .listing > li {
     width: 33.333333333333336%;
     float: left;
-    padding-left: 15px;
     padding-right: 15px;
+    padding-left: 15px;
   }
   /* sidebar */
 }
@@ -1195,43 +1215,43 @@ ul.inline > li {
   #header .box.site-contact {
     width: 50%;
     float: left;
-    padding-left: 15px;
     padding-right: 15px;
+    padding-left: 15px;
   }
   #header .box.site-contact .address,
   #header .box.site-contact .contact,
   #header .box.site-contact .open {
     width: 33.333333333333336%;
     float: left;
-    padding-left: 15px;
     padding-right: 15px;
+    padding-left: 15px;
     position: relative;
     padding: 15px;
   }
   #footer .box.widget {
     width: 25%;
     float: left;
-    padding-left: 15px;
     padding-right: 15px;
+    padding-left: 15px;
   }
   /* content */
   #main .entry {
     width: 75%;
     float: left;
-    padding-left: 15px;
     padding-right: 15px;
+    padding-left: 15px;
   }
   #main .sidebar {
     width: 25%;
     float: left;
-    padding-left: 15px;
     padding-right: 15px;
+    padding-left: 15px;
   }
   #main .footer .boxes.logo .box {
     width: 16.666666666666668%;
     float: left;
-    padding-left: 15px;
     padding-right: 15px;
+    padding-left: 15px;
   }
   #listview .listing .figure {
     padding-bottom: 27.352%;
@@ -1239,22 +1259,22 @@ ul.inline > li {
   #listview .listing .info {
     width: 60%;
     float: left;
-    padding-left: 15px;
     padding-right: 15px;
+    padding-left: 15px;
     padding: 0;
   }
   /* sidebar */
   .sidebar .widget .listing .box.image {
     width: 35%;
     float: left;
-    padding-left: 15px;
     padding-right: 15px;
+    padding-left: 15px;
   }
   .sidebar .widget .listing .box.description {
     width: 65%;
     float: left;
-    padding-left: 15px;
     padding-right: 15px;
+    padding-left: 15px;
   }
   /* footer */
   #footer .widget.contact .other-media span {
@@ -1263,14 +1283,14 @@ ul.inline > li {
   #footer .widget.contact .other-media span:first-child {
     width: 36%;
     float: left;
-    padding-left: 15px;
     padding-right: 15px;
+    padding-left: 15px;
   }
   #footer .widget.contact .other-media span:nth-child(2) {
     width: 64%;
     float: left;
-    padding-left: 15px;
     padding-right: 15px;
+    padding-left: 15px;
   }
 }
 @media (min-width: 1200px) {
