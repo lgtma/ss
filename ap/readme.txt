@@ -33,4 +33,5 @@ A custom menu helper plugin.
 * Initial release
 = 1.1 - Feb 2016 =
 * Updates apmenu.css
+* Add Submenu lvl.2
 
