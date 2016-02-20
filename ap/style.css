@@ -1,101 +1,67 @@
-html,body{
+*{
+	box-sizing: border-box;
+}
+html,
+body{
 	height:100%;
 }
-a,a:hover,a:focus{
+body{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif, arial;
+	font-size: 13px;
+	letter-spacing: .5px;
+}
+a,
+a:hover,
+a:focus{
 	text-decoration:none;
 	outline:none;
 	transition:all .5s;
 }
-ul {
+ul{
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
-#content{
+.ls{
+	display: none;
+	color: red;
+}
+
+/* LAYOUT */
+.container{
+	padding-left: 15px;
+	padding-right: 15px;
+	margin: 0 auto;
+}
+.site-content{
 	min-height: 100%;
 }
 
-/* Navigation */
-.toggle-main-menu{
-	display: block;
-	position: absolute;
-	top: 0;
-	right: 0;
-	cursor: pointer;
-}
-.toggle-main-menu{
-	background: #2a6496;
-	text-align: center;
-	width: 40px;
-	height: 40px;
-}
-.toggle-main-menu i.fa{
-	color: #fff;
-	font-size: 25px;
-	line-height: 40px;
-	display:block;
-}
-
-/* default menu theme */
-.ap-menu-theme{
-	background: #2a6496;
-}
-.ap-menu-theme .ap-menu a{
-	color: #fff;
-}
-
-.ap-menu-theme.shrink .ap-menu,
-.ap-menu li.shrink > .ap-sub-menu{
-	max-height: 1000px;
-	-webkit-transition: all .5s ease-in-out;
-	-moz-transition: all .5s ease-in-out;
-	-ms-transition: all .5s ease-in-out;
-	 -o-transition: all .5s ease-in-out;
-    transition: all .5s ease-in-out;
-}
-.ap-menu,
-.ap-sub-menu{
-	max-height: 0;
-	overflow: hidden;
-	-webkit-transition: all .5s ease-in-out;
-	-moz-transition: all .5s ease-in-out;
-	-ms-transition: all .5s ease-in-out;
-	-o-transition: all .5s ease-in-out;
-	transition: all .5s ease-in-out;
-}
-.ap-menu li a{
-	display: block;
-	line-height: 30px;
-}
-
-/* MEDIA QUERY */
 @media (min-width: 992px){
-	/* NAVIGATION */
-	nav{
+	.container{
+		width: 80%;
+	}
+} /*end min-width: 992px */
+
+@media (min-width: 1170px){
+	.container{
+		width: 85%;
+	}
+} /*end min-width: 1170px */
+
+@media (min-width: 1200px){
+	.ls{
 		display: block;
 	}
-	.toggle-main-menu,
-	.toggle-subnav i.fa{
-		display: none;
+	.container{
+		width: 90%;
 	}
-	/* mainmenu */
-	.ap-menu:before,
-	.ap-menu:after{
-		content: "";
-		display: table;
-	}
-	.ap-menu:after{
-		clear: both;
-	}
-	.ap-menu > li{
-		float: left;
-		position: relative;
-	}
-	.ap-sub-menu{
-		position: absolute;
-		min-width: 150px;
-	}
-	.ap-sub-menu li > ul{
-		left: 150px;
-	}
+} /*end min-width: 1200px */
+
+/* Navigation */
+.site-nav li a{
+	display: block;
+	line-height: 30px;
 }
