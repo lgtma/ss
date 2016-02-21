@@ -51,19 +51,12 @@
 			});
 			
 			// subnav toggle function
-			$('.ap-menu-wrapper > .ap-menu > li').each(function(){
+			$('.ap-menu-wrapper > .ap-menu li').each(function(){
 				var subtoggle = $('<i class="fa fa-angle-down"></i>');
 				// find submenu
 				if($('.'+ulSubClass, this).length){
 					$('> a',this).addClass('toggle-subnav');
 					$(subtoggle).appendTo($('> a',this));
-					//subnav lvl.2
-					$('.'+ulSubClass+' li').each(function(){
-						if($('.'+ulSubClass, this).length){
-							$('> a',this).addClass('toggle-subnav');
-							$('<i class="fa fa-angle-right"></i>').appendTo($('> a',this));
-						}
-					});
 				}
 			});
 			
