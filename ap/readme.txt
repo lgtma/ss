@@ -32,6 +32,7 @@ A custom menu helper plugin.
 = 1.0 - May 12 2015 =
 * Initial release
 = 1.1 - Feb 2016 =
-* Updates apmenu.css
-* Add Submenu lvl.2
+* Updates: apmenu.css
+* Updates: add Submenu lvl.2
+* Updates: add close Menu on body click
 

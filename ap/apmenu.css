@@ -13,6 +13,18 @@
 .ap-menu-theme .ap-menu a{
 	color: #fff;
 }
+.ap-menu-theme .ap-menu li a > i.fa{
+	background: #023E72;
+}
+.ap-menu li a > i.fa{
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+}
 .ap-menu,
 .ap-sub-menu{
 	-webkit-transition: all .5s ease-in-out;
@@ -21,7 +33,7 @@
 	-o-transition: all .5s ease-in-out;
 	transition: all .5s ease-in-out;
 }
-.ap-menu-theme.shrink .ap-menu,
+.shrink .ap-menu,
 .ap-menu li.shrink > .ap-sub-menu{
 	max-height: 1000px;
 	-webkit-transition: all .5s ease-in-out;
@@ -30,30 +42,18 @@
 	 -o-transition: all .5s ease-in-out;
     transition: all .5s ease-in-out;
 }
-.ap-menu-theme .ap-sub-menu{
+.ap-sub-menu{
 	max-height: 0;
 	overflow: hidden;
 }
-
-.ap-menu-theme .ap-menu li{
+.ap-menu li{
 	position: relative;
 }
-.ap-menu-theme .ap-menu li a{
+.ap-menu li a{
 	display: block;
 	line-height: 30px;
 	padding-left: 15px;
 	padding-right: 15px;
-}
-.ap-menu-theme .ap-menu li a > i.fa{
-	position: absolute;
-	right: 0;
-	top: 0;
-	width: 50px;
-	height: 50px;
-	line-height: 50px;
-	font-size: 20px;
-	background: #023E72;
-	text-align: center;
 }
 
 .ap-toggle,
@@ -76,6 +76,14 @@
   Media Query
 --------------------------------------------------------------*/
 @media (min-width: 992px){
+
+	.ap-menu-theme .ap-sub-menu{
+		background: #2a6496;
+	}
+	.ap-menu-theme .ap-menu li a > i.fa{
+		background: transparent;
+	}
+
 	.ap-menu:before,
 	.ap-menu:after{
 		content: "";
@@ -88,16 +96,42 @@
 		float: left;
 		position: relative;
 	}
+	.ap-menu li:hover > .ap-sub-menu{
+		overflow: initial;
+	}
+
+	/* ap-sub-menu */
+	.ap-menu li:hover > .ap-sub-menu{
+		max-height: 1000px;
+		-webkit-transition: all .5s ease-in-out;
+		-moz-transition: all .5s ease-in-out;
+		-ms-transition: all .5s ease-in-out;
+		-o-transition: all .5s ease-in-out;
+		transition: all .5s ease-in-out;
+	}
 	.ap-sub-menu{
 		position: absolute;
 		min-width: 150px;
+		background: #444;
+	}
+	.ap-sub-menu li:hover{
+		background: #0A4A81;
 	}
 	.ap-sub-menu li > ul{
+		top: 0;
 		left: 150px;
 	}
+	.ap-sub-menu .toggle-subnav i.fa{
+		display: block;
+		width: 30px;
+		height: 30px;
+		line-height: 30px;
+		background: transparent;
+	}
+
 }
 @media (max-width: 992px){
-	.ap-menu-theme .ap-menu{
+	.ap-menu{
 		max-height: 0;
 		overflow: hidden;
 		position: absolute;
@@ -105,7 +139,7 @@
 		width: 100%;
 		background: #2a6496;
 	}
-	.ap-menu-theme.shrink .ap-menu{
+	.ap-menu-theme .shrink .ap-menu{
 		border-top: 1px solid #023e72;
 	}
 	.ap-menu-theme .ap-sub-menu{
@@ -117,7 +151,7 @@
 	.ap-menu-theme .ap-menu li a{
 		border-bottom: 1px solid #023e72;
 	}
-	.ap-menu-theme .ap-menu li a{
+	.ap-menu li a{
 		line-height: 50px;
 	}
 	

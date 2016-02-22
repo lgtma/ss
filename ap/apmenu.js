@@ -5,6 +5,7 @@
 */
 (function($){
 	$.fn.apMenu = function(options){
+		
 		// Default settings
 		var defaults = $.extend({
 			toggleName: 'toggle-main-menu',
@@ -28,46 +29,86 @@
 			nav.find('ul.'+ulClass+' li > ul').addClass(ulSubClass); //add class submenu
 			nav.find('ul.'+ulClass+' li').has('ul').addClass(ulClass+'-has-children'); //add class has-children
 
-			if($(defaults.theme)){
+			if( $(defaults.theme) ){
 				nav.addClass(defaults.theme);
 			}
 
 			// if appendToggle not empty append toggle menu to specified place;
-			if(defaults.toggleNav){
+			if( defaults.toggleNav ){
 				$(defaults.toggleNav).append(toggle)
 			} else{
 				nav.append(toggle);
 			}
 			
 			// main nav toggle function
-			toggle.click(function(){
+			toggle.click( function(e){
+
+				e.stopPropagation();
 				nav.toggleClass('shrink');
 				$(this).toggleClass('shrink');
-				if($(this).hasClass('shrink')){
+
+				if( $(this).hasClass('shrink') ){
 					$('i', this).removeClass('fa-bars').addClass('fa-times');
 				} else {
 					$('i',this).removeClass('fa-times').addClass('fa-bars');
 				}
+
 			});
 			
 			// subnav toggle function
-			$('.ap-menu-wrapper > .ap-menu li').each(function(){
-				var subtoggle = $('<i class="fa fa-angle-down"></i>');
+			$('.ap-menu-wrapper > .'+ulClass+' > li').each(function(){
+				
+				var fa_down = 'fa-down',
+					fa_right = 'fa-right',
+					toggle_subnav = 'toggle-subnav',
+					subtoggle = $('<i class="fa"></i>');
+				
 				// find submenu
 				if($('.'+ulSubClass, this).length){
-					$('> a',this).addClass('toggle-subnav');
-					$(subtoggle).appendTo($('> a',this));
+					
+					$('> a',this).addClass(toggle_subnav);
+					$(subtoggle).addClass(fa_down).appendTo($('> a',this));
+
+					// submenu lvl.2
+					$('.'+ulClass+'-has-children',this).each(function(){
+						if($('.'+ulSubClass).length){
+							$('> a',this).addClass(toggle_subnav);
+							$(subtoggle).addClass(fa_right).appendTo($('> a',this));
+						}
+					});
+
 				}
+
 			});
 			
-			var togglesubnav = $('a.toggle-subnav > i.fa');
-			togglesubnav.click(function(){
-				var parentli = $(this).closest('li');
+			var togglesubnav_i = $('a.toggle-subnav > i.fa');
+			togglesubnav_i.click(function(){
+
+				var parent_li = $(this).closest('li');
 				$('li').not($(this).parents('li')).removeClass('shrink');
-				parentli.toggleClass('shrink');
+				parent_li.toggleClass('shrink');
 				//console.log(parentli);
-			});
 			
+			});
+
+			// close main nav on body click
+			$('body').on('click',function(e){
+
+				var a = $(e.target),
+					b = a.parents();
+
+				if( !a.is('a') && !b.is('a') ){
+					if( nav.hasClass('shrink') ){
+						nav.removeClass('shrink');
+						toggle.removeClass('shrink');
+					}
+					if( $('.'+defaults.toggleName+' i.fa').hasClass('fa-times') ){
+						$('.'+defaults.toggleName+' i.fa').removeClass('fa-times').addClass('fa-bars');
+					}
+				}
+
+			});
+
 			/*
 			 * TEST:
 			 * # fixed navbar on scroll down  
