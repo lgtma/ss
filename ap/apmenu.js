@@ -55,25 +55,26 @@
 
 			});
 			
+			var fa_angle_down = 'fa-angle-down',
+				fa__angle_right = 'fa-angle-right';
+
 			// subnav toggle function
 			$('.ap-menu-wrapper > .'+ulClass+' > li').each(function(){
 				
-				var fa_down = 'fa-down',
-					fa_right = 'fa-right',
-					toggle_subnav = 'toggle-subnav',
-					subtoggle = $('<i class="fa"></i>');
+				var toggle_subnav = 'toggle-subnav',
+					subtoggle = '<i class="fa"></i>';
 				
 				// find submenu
 				if($('.'+ulSubClass, this).length){
 					
 					$('> a',this).addClass(toggle_subnav);
-					$(subtoggle).addClass(fa_down).appendTo($('> a',this));
+					$(subtoggle).addClass(fa_angle_down).appendTo($('> a',this));
 
 					// submenu lvl.2
 					$('.'+ulClass+'-has-children',this).each(function(){
 						if($('.'+ulSubClass).length){
 							$('> a',this).addClass(toggle_subnav);
-							$(subtoggle).addClass(fa_right).appendTo($('> a',this));
+							$(subtoggle).removeClass(fa_angle_down).addClass(fa_angle_right).appendTo($('> a',this));
 						}
 					});
 
@@ -85,10 +86,11 @@
 			togglesubnav_i.click(function(){
 
 				var parent_li = $(this).closest('li');
+
 				$('li').not($(this).parents('li')).removeClass('shrink');
 				parent_li.toggleClass('shrink');
 				//console.log(parentli);
-			
+
 			});
 
 			// close main nav on body click
@@ -116,7 +118,7 @@
 			if(defaults.fixedScroll == true){
 				$(window).scroll(function(){
 					var distanceY = window.pageYOffset,
-					shrinkOn = 100,
+					shrinkOn = 150,
 					siteNavbar = $('.site-nav');
 					if(distanceY > shrinkOn){
 						$(siteNavbar).addClass('scrolled-down');

@@ -12,7 +12,7 @@ A custom menu helper plugin.
  menu style functions for non-bootstrap ap realty wp themes.
 
 == Installation ==
-
+```html
 <!-- build menu -->
 <nav id="navid" role="navigation">
 	<ul>
@@ -21,7 +21,7 @@ A custom menu helper plugin.
 		<li><a href="#blog">Blog</a></li>
 	</ul>	
 </nav>
-
+```javascript
 /* call function */
 (function($){
 	$('#navid').apMenu();
