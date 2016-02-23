@@ -56,7 +56,7 @@
 			});
 			
 			var fa_angle_down = 'fa-angle-down',
-				fa__angle_right = 'fa-angle-right';
+				fa_angle_right = 'fa-angle-right';
 
 			// subnav toggle function
 			$('.ap-menu-wrapper > .'+ulClass+' > li').each(function(){
