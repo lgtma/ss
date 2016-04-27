@@ -16,6 +16,10 @@
 .ap-menu-theme .ap-menu li a > i.fa{
 	background: #023E72;
 }
+
+.ap-menu{
+	z-index: 1;
+}
 .ap-menu li a > i.fa{
 	position: absolute;
 	right: 0;

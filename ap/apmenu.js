@@ -55,8 +55,7 @@
 
 			});
 			
-			var fa_angle_down = 'fa-angle-down',
-				fa_angle_right = 'fa-angle-right';
+			var fa_angle_down = 'fa-angle-down';
 
 			// subnav toggle function
 			$('.ap-menu-wrapper > .'+ulClass+' > li').each(function(){
@@ -74,7 +73,7 @@
 					$('.'+ulClass+'-has-children',this).each(function(){
 						if($('.'+ulSubClass).length){
 							$('> a',this).addClass(toggle_subnav);
-							$(subtoggle).removeClass(fa_angle_down).addClass(fa_angle_right).appendTo($('> a',this));
+							$(subtoggle).addClass(fa_angle_down).appendTo($('> a',this));
 						}
 					});
 
