@@ -11,7 +11,8 @@
 			toggleName: 'toggle-main-menu',
 			toggleNav: '', // place where to put toggle
 			theme: 'ap-menu-theme', // menu style
-			fixedScroll: false // fixed navbar on scroll
+			fixedScroll: true, // fixed navbar on scroll
+			direction: '' //nav slide direction
 		}, options);
 
 		var opt = $.extend(defaults,options);
@@ -31,6 +32,16 @@
 
 			if( $(defaults.theme) ){
 				nav.addClass(defaults.theme);
+			}
+
+			if( defaults.direction=='right' ){
+				nav.addClass('rtl');// right to left
+			}
+			else if( defaults.direction=='left' ){
+				nav.addClass('ltr');//left to right
+			}
+			else{
+				nav.addClass('ttb');//top to bottom
 			}
 
 			// if appendToggle not empty append toggle menu to specified place;
@@ -82,8 +93,8 @@
 			});
 			
 			var togglesubnav_i = $('a.toggle-subnav > i.fa');
-			togglesubnav_i.click(function(){
-
+			togglesubnav_i.click(function(e){
+				e.preventDefault();
 				var parent_li = $(this).closest('li');
 
 				$('li').not($(this).parents('li')).removeClass('shrink');
@@ -111,7 +122,6 @@
 			});
 
 			/*
-			 * TEST:
 			 * # fixed navbar on scroll down  
 			 * ----------------------------------------------------------------- */
 			if(defaults.fixedScroll == true){
