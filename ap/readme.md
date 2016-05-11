@@ -35,5 +35,7 @@ A custom menu helper plugin.
 * Updates: apmenu.css
 * Updates: add Submenu lvl.2
 * Updates: add close Menu on body click
-* Updates: fix missing nav arrow icon 
+* Updates: fix missing nav arrow icon
+= 1.1 - may 2016 =
+* Updates: add nav slide direction
 
