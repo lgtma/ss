@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> AP Tabs</title>
+
+	<!-- Bootstrap CSS
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" href="../style.css">
+	<link rel="stylesheet" href="aptabs.css" media="all" />
+</head>
+<body>
+<header id="#header" class="site-header"></header>
+
+<div class="site-content">
+	<div class="container">
+	wrap tabs:
+	<code>
+		<div id="tabsid">
+			tabs nav and tabs content here
+		</div>
+	</code>
+		<!-- tabs with nested elements -->
+		<div id="tabs">
+			<div class="nav">
+				<!-- <div>
+					<span><a href="#tabs-nested1">tabs 1</a></span>
+					<span><a href="#tabs-nested2">tabs 2</a></span>
+					<span><a href="#tabs-nested3">tabs 3</a></span>
+				</div> -->
+				<ul>
+					<li><a href="#tabs-nested1">tabs 1</a></li>
+					<li><a href="#tabs-nested2">tabs 2</a></li>
+					<li><a href="#tabs-nested3">tabs 3</a></li>
+				</ul>	
+			</div>
+			<div class="content">
+				<div id="tabs-nested1">
+					<h2>Content tabs 1</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse voluptas est, reiciendis atque error animi quisquam dolorem similique odit laborum perferendis cumque odio deleniti inventore doloremque accusamus, ducimus, recusandae architecto.</p>
+				</div>
+				<div id="tabs-nested2">
+					<h2>Content tabs 2</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae cupiditate praesentium et totam. Temporibus aliquam dolorem, perferendis. Dignissimos architecto blanditiis voluptatibus provident quos, porro nostrum atque sunt magni ea iusto?
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim est distinctio aperiam officiis itaque, vel saepe necessitatibus inventore, doloribus nulla dolorem officia nesciunt labore aliquam eum aspernatur, omnis eaque explicabo!</p>
+				</div>
+				<div id="tabs-nested3">
+					<h2>Content tabs 3</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In, magnam, rem amet consequatur quam itaque adipisci numquam tempora, vitae ipsa odio. Temporibus ipsam, voluptatem explicabo cumque sunt sequi et accusamus.</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta odio, deserunt nam voluptatum aperiam, culpa autem nulla expedita atque minus tempora tenetur, modi voluptatibus omnis quae a. Facilis, voluptates, magnam?</p>
+				</div>
+			</div>
+		</div>
+		<!--/#tabs-->		
+	</div>
+	<!--/.container-->
+</div>
+<!--/.site-content-->
+<footer id="footer" class="site-footer">
+	<div class="container">
+		<p>&copy;lgtma - 2015</p>
+	</div>
+</footer>
+<!--/.site-footer-->
+<!-- scripts -->
+<script src="../jquery-1.11.3.min.js"></script>
+<script src="aptabs.js"></script>
+<script>
+	(function($){
+		$('#tabs').apTabs();
+	})(jQuery);
+</script>
+</body>
+</html>

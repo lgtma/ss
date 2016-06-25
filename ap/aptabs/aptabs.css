@@ -1,0 +1,53 @@
+/* apTabs  */
+.apt-nav:before,
+.apt-nav:after{
+	content: "";
+	display: table;
+}
+.apt-nav:after{
+	clear: both;
+}
+
+.apt-nav{}
+.apt-nav .apt-link{
+	float: left;
+	background: #eee;
+	border-right: 1px solid #ddd;
+	box-shadow: 1px 1px 2px #ddd;
+	border-top-right-radius: 2px;
+	border-top-left-radius: 2px;
+}
+.apt-nav .apt-link:first-child{
+	border-left: 1px solid #ddd;
+}
+.apt-link a{
+	display: block;
+	line-height: 30px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	color: #333;
+}
+
+.ap-tabs-content{
+	background: #eee;
+	padding: 15px;
+	position: relative;
+}
+
+.apt-content{
+	display: none;
+}
+.apt-content > div{
+	padding: 15px;
+	color: #ddd;
+	background: #7f7f7f;
+}
+
+.apt-active{
+	display: block;
+}
+.apt-hide{
+	display: none;
+}
