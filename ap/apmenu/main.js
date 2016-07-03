@@ -1,22 +1,16 @@
 var $ = jQuery.noConflict();
-//init calling functions
-$.realeo = {
-	_init: function(){
-		$.realeo.apMenu._init();
-	}
-};
-//functions
-$.realeo.apMenu = {
-	_init: function(){
-		$.realeo.apMenu.init_menu();
+realeo = {
+	init: function(){
+		realeo._mainmenu();
 	},
 
-	init_menu: function(){
+	//mainmenu - apmenu.js
+	_mainmenu: function(){
 		$('#main-nav').apMenu({
 			//options
-			fixedScroll: true,
-			direction: 'right'
-		})
+			fixedScroll: true
+		});
 	}
-};
-jQuery(document).ready($.realeo._init);
+}
+
+$(document).ready(realeo.init);
