@@ -8,9 +8,10 @@ realeo = {
 	_mainmenu: function(){
 		$('#main-nav').apMenu({
 			//options
-			fixedScroll: true
+			slideDirection: 'right'
 		});
 	}
+	
 }
 
 $(document).ready(realeo.init);

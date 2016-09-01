@@ -3,24 +3,37 @@
  @lgtma
 */
 
-.ap-menu-theme{
+@import 'apui/styles.css'; /*fontastic icon*/
+body{
+	overflow-x: hidden;
+}
+.site-main-nav {
 	background: #2a6496;
 }
-.ap-menu-theme .ap-menu{
+.site-main-nav .ap-menu-wrapper{
 	margin-left: -15px;
 	margin-right: -15px;
 }
-.ap-menu-theme .ap-menu a{
+.site-main-nav .ap-menu a{
 	color: #fff;
 }
-.ap-menu-theme .ap-menu li a > i.fa{
+.site-main-nav .ap-menu li a > i.icon{
 	background: #023E72;
 }
 
-.ap-menu{
+.site-main-nav .ap-menu{
 	z-index: 1;
 }
-.ap-menu li a > i.fa{
+.site-main-nav .ap-menu li{
+	position: relative;
+}
+.site-main-nav .ap-menu li a{
+	display: block;
+	padding-left: 15px;
+	padding-right: 15px;
+	line-height: 50px;
+}
+.site-main-nav .ap-menu li a > i.icon{
 	position: absolute;
 	right: 0;
 	top: 0;
@@ -29,6 +42,28 @@
 	line-height: 50px;
 	text-align: center;
 }
+.site-main-nav .ap-menu{
+	max-height: 0;
+	overflow: hidden;
+	position: absolute;
+	top: 50px;
+	width: 100%;
+	background: #2a6496;
+}
+
+.site-main-nav .shrink .ap-menu{
+	border-top: 1px solid #023e72;
+}
+.site-main-nav .ap-sub-menu{
+	background: #0A4A81;
+}
+.site-main-nav .ap-sub-menu li .ap-sub-menu{
+	background: #053A68;
+}
+.site-main-nav .ap-menu li a{
+	border-bottom: 1px solid #023e72;
+}
+
 .ap-menu,
 .ap-sub-menu{
 	-webkit-transition: all .5s ease-in-out;
@@ -50,58 +85,124 @@
 	max-height: 0;
 	overflow: hidden;
 }
-.ap-menu li{
-	position: relative;
-}
-.ap-menu li a{
-	display: block;
-	line-height: 30px;
-	padding-left: 15px;
-	padding-right: 15px;
+
+/* menu direction */	
+.site-main-nav.rtl .ap-menu,
+.site-main-nav.ltr .ap-menu{
+	max-height: inherit;
+	height: 100%;
 }
 
-.ap-toggle,
-.toggle-subnav i.fa{
-	display: none;
+.site-main-nav.rtl .ap-menu{
+	right: -100%;
+}
+.site-main-nav.ltr .ap-menu{
+	left: -100%;
 }
 
-/* fixed ap-menu */
-.ap-menu-theme.scrolled-down{
-	position: fixed;
-	top: 0;
+.site-main-nav.rtl.shrink .ap-menu,
+.site-main-nav.ltr.shrink .ap-menu{
+	margin: 0;
 	width: 100%;
+}
+
+.site-main-nav.ltr.shrink .ap-menu{
+	left: 0;
+}
+.site-main-nav.rtl.shrink .ap-menu{
+	right: 0;
+}
+
+/* ap-toggle */
+.ap-toggle{
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	cursor: pointer;
+}
+.ap-toggle{
+	background: #2a6496;
+	text-align: center;
+	width: 50px;
 	height: 50px;
 }
-.ap-menu-theme.scrolled-down .ap-menu li a{
+.ap-toggle i.icon{
+	color: #fff;
+	font-size: 25px;
 	line-height: 50px;
+}
+
+.ap-menu .icon,
+.toggle-subnav .icon{
+	display: block;
+}
+
+.ap-toggle .icon:before,
+.toggle-subnav .icon:before {
+	line-height: 55px;
 }
 
 /*--------------------------------------------------------------
   Media Query
 --------------------------------------------------------------*/
+
+
+@media (min-width: 768px){}
+/* Tablet up (includes iPads in landscape) */
 @media (min-width: 992px){
 
-	.ap-menu-theme .ap-sub-menu{
+	.ap-toggle{
+		display: none;
+	}
+
+	.site-main-nav .ap-menu {
+		max-height: initial;
+		overflow: initial;
+		position: relative;
+		top: 0;
+	}
+
+	.site-main-nav .ap-menu > li > a {
+		padding-right: 30px;
+	}
+	.site-main-nav .ap-menu li a > i.icon {
+		width: 30px;
+		height: 30px;
+		line-height: 30px;
+	}
+	.site-main-nav .ap-menu .icon:before{
+		line-height: 32px;
+	}
+	.site-main-nav .ap-menu li a{
+		border-bottom: 0;
+	}
+	.site-main-nav .ap-sub-menu{
 		background: #2a6496;
 	}
-	.ap-menu-theme .ap-menu li a > i.fa{
+	.site-main-nav .ap-menu li a > i.icon{
 		background: transparent;
 	}
 
-	.ap-menu:before,
-	.ap-menu:after{
+	.site-main-nav .ap-menu:before,
+	.site-main-nav .ap-menu:after{
 		content: "";
 		display: table;
 	}
-	.ap-menu:after{
+	.site-main-nav .ap-menu:after{
 		clear: both;
 	}
-	.ap-menu > li{
+
+	.site-main-nav .ap-menu > li{
 		float: left;
-		position: relative;
+		overflow: hidden;
 	}
-	.ap-menu li:hover > .ap-sub-menu{
+	.site-main-nav .ap-menu > li:hover,
+	.site-main-nav .ap-menu li:hover > .ap-sub-menu{
 		overflow: initial;
+	}
+	.site-main-nav .ap-menu li a{
+		line-height: 30px;
 	}
 
 	/* ap-sub-menu */
@@ -125,7 +226,7 @@
 		top: 0;
 		left: 150px;
 	}
-	.ap-sub-menu .toggle-subnav i.fa{
+	.ap-sub-menu .toggle-subnav i.icon{
 		display: block;
 		width: 30px;
 		height: 30px;
@@ -133,80 +234,13 @@
 		background: transparent;
 	}
 
-} 
-@media (max-width: 992px){
-	.ap-menu{
-		max-height: 0;
-		overflow: hidden;
-		position: absolute;
-		top: 50px;
-		width: 100%;
-		background: #2a6496;
+	.site-main-nav.rtl .ap-menu{
+		right: 0;
 	}
-	.ap-menu-theme .shrink .ap-menu{
-		border-top: 1px solid #023e72;
-	}
-	.ap-menu-theme .ap-sub-menu{
-		background: #0A4A81;
-	}
-	.ap-menu-theme .ap-sub-menu li .ap-sub-menu{
-		background: #053A68;
-	}
-	.ap-menu-theme .ap-menu li a{
-		border-bottom: 1px solid #023e72;
-	}
-	.ap-menu li a{
-		line-height: 50px;
-	}
-	
-	.site-nav.rtl .ap-menu,
-	.site-nav.ltr .ap-menu{
-		max-height: inherit;
-		height: 100%;
-		width: 0;
-	}
-
-	.site-nav.rtl .ap-menu{
-		right: -100%;
-	}
-	.site-nav.ltr .ap-menu{
-		left: -100%;
-	}
-
-	.site-nav.rtl.shrink .ap-menu,
-	.site-nav.ltr.shrink .ap-menu{
-		margin: 0;
-		width: 100%;
-	}
-
-	.site-nav.ltr.shrink .ap-menu{
+	.site-main-nav.ltr .ap-menu{
 		left: 0;
 	}
-	.site-nav.rtl.shrink .ap-menu{
-		right: 0;
-	}
 
-	/* ap-toggle */
-	.ap-toggle{
-		display: block;
-		position: absolute;
-		top: 0;
-		right: 0;
-		cursor: pointer;
-	}
-	.ap-toggle{
-		background: #2a6496;
-		text-align: center;
-		width: 50px;
-		height: 50px;
-	}
-	.ap-toggle i.fa{
-		color: #fff;
-		font-size: 25px;
-		line-height: 50px;
-	}
-	.ap-toggle .ifa,
-	.toggle-subnav i.fa{
-		display: block;
-	}
 }
+/* Larger than laptop */
+@media (min-width: 1200px){}
