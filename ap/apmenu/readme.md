@@ -13,7 +13,7 @@ A custom menu helper plugin.
 
 == Options ==
  slideDirection : slide direction
- theme 			: menu class name for styling.
+ theme 	: menu class name for styling.
  toggleName 	: toggle class name.
  appendToggle 	: append toggle to specific element.
 
