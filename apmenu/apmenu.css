@@ -7,7 +7,12 @@
 
 header {
 	background: #deecf8;
+	line-height: 50px;
 }
+header h1 {
+	margin: 0;
+}
+
 nav[role="navigation"] {
 	background: #2a6496;
 }
@@ -50,7 +55,7 @@ nav[role="navigation"] .ap-menu{
 	background: #2a6496;
 }
 
-body.nav-shrink nav[role="navigation"] .ap-menu{
+body.ap-nav-active nav[role="navigation"] .ap-menu{
 	border-top: 1px solid #023e72;
 }
 nav[role="navigation"] .ap-sub-menu{
@@ -71,7 +76,8 @@ nav[role="navigation"] .ap-menu li a{
 	-o-transition: all .5s ease-in-out;
 	transition: all .5s ease-in-out;
 }
-body.nav-shrink .ap-menu,
+
+body.ap-nav-active .ap-menu,
 .ap-menu li.shrink > .ap-sub-menu{
 	max-height: 1000px;
 	-webkit-transition: all .5s ease-in-out;
@@ -119,8 +125,6 @@ body.nav-shrink .ap-menu,
   Media Query
 --------------------------------------------------------------*/
 
-
-@media (min-width: 768px){}
 /* Tablet up (includes iPads in landscape) */
 @media (min-width: 992px){
 
@@ -207,5 +211,3 @@ body.nav-shrink .ap-menu,
 	}
 
 }
-/* Larger than laptop */
-@media (min-width: 1200px){}

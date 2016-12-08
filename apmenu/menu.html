@@ -7,9 +7,8 @@
     <title>
         AP Menu Navigation Style
     </title>
-    <link rel="stylesheet" href="../fonts/font-awesome/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../ap/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../ap/style.css" />
     <link rel="stylesheet" href="./apmenu.css" />
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js">
@@ -19,7 +18,7 @@
     <![endif]-->
 </head>
 <body>
-<nav id="main-nav" role="navigation" class="site-main-nav">
+<nav id="main-nav" role="navigation" class="ap-nav">
 	<div class="container">
 		<ul class="main-menu">
 			<li>
@@ -94,15 +93,12 @@
 </footer>
 <!-- /#footer -->
 <!-- jQuery -->
-<script src="../jquery-1.11.3.min.js"></script>
+<script src="../ap/jquery-1.11.3.min.js"></script>
 <!-- custom -->
 <script src="apmenu.js"></script>
 <script>
     (function($){
-        $("#main-nav").apMenu({
-            toggleName: "tog-m-nav",
-            appendToggle: "body"
-        });
+        $("#main-nav").apMenu();
 
         $(window).on("load resize", function() {
             var hh = $("#header").height(),

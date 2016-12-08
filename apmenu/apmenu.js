@@ -8,8 +8,10 @@
 
 		// Default settings
 		var defaults = $.extend({
-			toggleName: "toggle-main-menu", //toggle menu class name
-			appendToggle: ""// place where to append toggle menu
+			toggleName: "ap-toggle", //toggle menu class name
+			toggleBar: "<i class='icon icon-bars'></i>",
+			toggleClose: "<i class='icon icon-times'></i>",
+			appendToggle: ".ap-nav" // where to append toggle menu
 		}, options);
 
 		var opt = $.extend(defaults,options);
@@ -19,17 +21,14 @@
 			var nav = $(this),
 				ulClass = 'ap-menu',
 				ulSubClass = 'ap-sub-menu',
-				ulFirst = nav.find('ul:first'),
-				toggle  = $('<span class="ap-toggle '+defaults.toggleName+'"><i class="icon icon-bars"></i></span>');
+				ulFirst = nav.find('ul:first');
+
+			var toggle  = $('<span class="'+defaults.toggleName+'">'+defaults.toggleBar+'</span>');
 
 			ulFirst.addClass(ulClass), //add class ul parent
 			ulFirst.wrap('<div class="ap-menu-wrapper"></div>'); //wrap ul parent
 			nav.find('ul.'+ulClass+' li > ul').addClass(ulSubClass); //add class submenu
 			nav.find('ul.'+ulClass+' li').has('ul').addClass(ulClass+'-has-children'); //add class has-children
-
-			if( $(defaults.theme) ){
-				nav.addClass(defaults.theme);
-			}
 
 			// if appendToggle not empty append toggle menu to specified place;
 			if( defaults.appendToggle ){
@@ -41,8 +40,8 @@
 			// main nav toggle function
 			toggle.click( function(e){
 				e.stopPropagation();
-				$("body").toggleClass("nav-shrink");
 				$(this).toggleClass('shrink');
+				$("body").toggleClass("ap-nav-active");
 
 				if( $(this).hasClass('shrink') ){
 					$('i', this).removeClass('icon-bars').addClass('icon-times');
@@ -90,16 +89,23 @@
 
 			// close main nav on body click
 			$('body').on('click',function(e){
+				e.stopPropagation();
 
 				var a = $(e.target),
 					b = a.parents();
 
 				if( !a.is('a') && !b.is('a') ){
+
 					if( nav.hasClass('shrink') ){
 						nav.removeClass('shrink');
-						toggle.removeClass('shrink');
-						$("body").removeClass("nav-shrink");
 					}
+					if( toggle.hasClass("shrink") ) {
+						toggle.removeClass("shrink");
+					}
+					if($("body").hasClass("ap-nav-active")){
+						$("body").removeClass("ap-nav-active");
+					}
+
 					if( $('.'+defaults.toggleName+' i.icon').hasClass('icon-times') ){
 						$('.'+defaults.toggleName+' i.icon').removeClass('icon-times').addClass('icon-bars');
 					}
